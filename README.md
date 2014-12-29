@@ -25,3 +25,8 @@ $ subdivx download 'my tv show s01e01' web-dl
 $ subdivx download 'my tv show s01e01' lol
 $ subdivx download 'my tv show s01e01' argenteam
 ```
+### Update
+In order to update this package, run
+```bash
+$ composer global update
+```
