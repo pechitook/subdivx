@@ -1,6 +1,6 @@
 {
-    "name": "p4bloch/subdivx-cli",
-    "description": "Download subtitles from Subdivx repository from the command line.",
+    "name": "p4bloch/subdivx",
+    "description": "Download subtitles from Subdivx.com's repository easily from the command line.",
     "require": {
         "symfony/console": "~2.6",
         "symfony/dom-crawler": "2.*",
@@ -17,5 +17,9 @@
             "name": "Pablo Chiappetti",
             "email": "pchiappetti@gmail.com"
         }
-    ]
+    ],
+    "bin": [
+        "subdivx"
+    ],
+    "minimum-stability": "stable"
 }
