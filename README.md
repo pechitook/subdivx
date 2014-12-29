@@ -5,7 +5,7 @@ CLI tool that eases the process of searching and downloading subtitles from the 
 This project depends upon the **unrar** and **unzip** tools to extract the subtitle from the downloaded file. On OS X, [Homebrew](http://brew.sh/) is your friend to install them.
 
 ### Installation
-You need to have [Composer](https://getcomposer.org/doc/00-intro.md), the PHP Package Manager, installed on your machine in order to use this tool.
+You need to have [Composer](https://getcomposer.org/doc/00-intro.md), the PHP Package Manager, installed on your machine in order to use this tool. Once you have composer, you can install this package globally, so it can be accessed from any directory.
 ```bash
 $ composer global require "p4bloch/subdivx:1.*"
 ```
