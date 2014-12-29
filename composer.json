@@ -1,0 +1,21 @@
+{
+    "name": "p4bloch/subdivx-cli",
+    "description": "Download subtitles from Subdivx repository from the command line.",
+    "require": {
+        "symfony/console": "~2.6",
+        "symfony/dom-crawler": "2.*",
+        "guzzlehttp/guzzle": "5.*"
+    },
+    "autoload":{
+        "psr-4": {
+            "P4bloch\\Subdivx\\": ""
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pablo Chiappetti",
+            "email": "pchiappetti@gmail.com"
+        }
+    ]
+}
