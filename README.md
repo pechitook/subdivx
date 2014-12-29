@@ -2,7 +2,7 @@
 CLI tool that eases the process of searching and downloading subtitles from the subdivx.com repository.
 
 ### Installation
-You need to have composer installed in order to pull this tool.
+You need to have [Composer](https://getcomposer.org/doc/00-intro.md) installed in order to pull this tool.
 ```bash
 $ composer global require "p4bloch/subdivx:1.*"
 ```
