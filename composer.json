@@ -4,7 +4,7 @@
     "require": {
         "symfony/console": "~2.6",
         "symfony/dom-crawler": "2.*",
-        "guzzlehttp/guzzle": "5.*"
+        "guzzlehttp/guzzle": "4.*"
     },
     "autoload":{
         "psr-4": {
