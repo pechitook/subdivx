@@ -47,6 +47,11 @@ class Download extends Command {
 
         $subtitles = $this->getSubtitlesFromHtml($html);
 
+        if (!$subtitles){
+            $this->output->writeln("<error>La búsqueda de \"$query\" no devolvió ningún resultado.</error>");
+            exit();
+        }
+
         if ($version = $this->input->getArgument('version')) {
             $subtitles = $this->filter($subtitles, $version);
         }
