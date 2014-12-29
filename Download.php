@@ -47,13 +47,13 @@ class Download extends Command {
 
         $subtitles = $this->getSubtitlesFromHtml($html);
 
-        if (!$subtitles){
-            $this->output->writeln("<error>La búsqueda de \"$query\" no devolvió ningún resultado.</error>");
-            exit();
-        }
-
         if ($version = $this->input->getArgument('version')) {
             $subtitles = $this->filter($subtitles, $version);
+        }
+
+        if (!$subtitles){
+            $this->output->writeln("<error>La búsqueda no devolvió ningún resultado.</error>");
+            exit();
         }
 
         $this->displaySubtitlesToUser($subtitles);
@@ -213,6 +213,7 @@ class Download extends Command {
      */
     private function filter($subtitles, $version) {
         $filteredSubtitles = [];
+
         foreach ($subtitles as $subtitle) {
             if (preg_match("|$version|", $subtitle['description'])) {
                 $filteredSubtitles[] = $subtitle;
