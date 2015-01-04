@@ -182,11 +182,11 @@ class Download extends Command {
     private function decompress($fullPath, $ext) {
         if (strtolower($ext) == 'rar') {
             // not cool to depend upon unrar, needs more work
-            exec('unrar e ' . $fullPath);
+            exec('unrar e ' . escapeshellcmd($fullPath));
         }
         if (strtolower($ext) == 'zip') {
             // not *that* cool to depend upon unzip, probably needs more work
-            exec('unzip ' . $fullPath);
+            exec('unzip ' . escapeshellcmd($fullPath));
         }
     }
 
