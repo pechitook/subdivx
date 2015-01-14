@@ -89,6 +89,11 @@ class Download extends Command {
             $subs[$i + 1]['link'] = $node->attr('href');
         });
 
+        // get number of downloads of each sub
+        $allSubsInPage->filterXPath('//*[@id="buscador_detalle_sub_datos"]/text()[1]')->each(function ($node, $i) use (&$subs) {
+            $subs[$i + 1]['downloads'] = $node->text();
+        });
+
         return $subs;
     }
 
@@ -101,6 +106,7 @@ class Download extends Command {
         foreach ($subs as $key => $sub) {
             $this->output->writeln("<comment>Option [{$key}]</comment>");
             $this->output->writeln("<info>{$sub['description']}</info>");
+            $this->output->writeln("<info>Downloads: {$sub['downloads']}</info>");
             echo "\n";
         }
     }
