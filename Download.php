@@ -93,9 +93,10 @@ class Download extends Command
 		});
 
 		// get description of each sub
-		$allSubsInPage->filterXPath('//*[@id="buscador_detalle_sub"]/text()')->each(function ($node, $i) use (&$subs)
+		$allSubsInPage->filterXPath('//*[@id="buscador_detalle_sub"]')->each(function ($node, $i) use (&$subs)
 		{
-			$subs[$i + 1]['description'] = $node->text();
+			$text = trim(str_replace("(adsbygoogle = window.adsbygoogle || []).push({});", "", $node->text()));
+			$subs[$i + 1]['description'] = $text;
 		});
 
 		return $subs;
