@@ -144,7 +144,6 @@ class Download extends Command
 		$tmpPath = getcwd();
 
 		$res = $this->client->get($link, ['save_to' => $tmpPath . '/' . $filename]);
-		var_dump($res->getEffectiveUrl());
 		$fileext = $this->getFileExtension($res->getEffectiveUrl());
 
 		$fullPath = $this->addExtensionToFile($tmpPath, $filename, $fileext);
