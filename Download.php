@@ -254,12 +254,20 @@ class Download extends Command
 		$res = $this->client->get($sub_link);
 		$body = (string) $res->getBody();
 
-		preg_match_all('|a rel="nofollow" class="detalle_link" href="(.*?)"><b>Bajar<\/b>|', $body, $link);
-		$res = $this->client->get($link[1][0]);
-		$body = (string) $res->getBody();
-		preg_match('|document.location.href=\'(.*?)\'|', $body, $res);
+		preg_match_all('|class="link1" href="(.*?)">Bajar .* ahora<\/a><\/h1>|', $body, $link);
+		if ($link[1][0]) {
+			return $link[1][0];
+		}
 
-		return $res[1];
+		preg_match_all('|a rel="nofollow" class="detalle_link" href="(.*?)"><b>Bajar<\/b>|', $body, $link);
+		if ($link[1][0]) {
+			$linkUrl = $link[1][0];
+			$res = $this->client->get($linkUrl);
+			$body = (string) $res->getBody();
+			preg_match('|document.location.href=\'(.*?)\'|', $body, $res);
+			return $res[1];
+		}
+
 	}
 
 }
